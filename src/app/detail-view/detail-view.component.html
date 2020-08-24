@@ -17,9 +17,9 @@
       <div class="card-panel">
         <span class="card-title_1">{{result_1.year}}</span>
         <ul>
-          <li>ca : {{result_1.ca}}</li>
-          <li>margin : {{result_1.margin}}</li>
-          <li>ebitda : {{result_1.ebitda}}</li>
+          <li>ca : {{result_1.ca}} <mat-icon *ngIf="result_1.ca > result_2.ca">trending_up</mat-icon> <mat-icon *ngIf="result_1.ca < result_2.ca">trending_down</mat-icon></li>
+          <li>margin : {{result_1.margin}} <mat-icon *ngIf="result_1.margin > result_2.margin">trending_up</mat-icon> <mat-icon *ngIf="result_1.margin < result_2.margin">trending_down</mat-icon></li>
+          <li>ebitda : {{result_1.ebitda}} <mat-icon *ngIf="result_1.ebitda > result_2.ebitda">trending_up</mat-icon> <mat-icon *ngIf="result_1.ebitda < result_2.ebitda">trending_down</mat-icon></li>
           <li>business : {{result_1.business}}</li>
         </ul>
       </div>
