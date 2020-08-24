@@ -1,11 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import {HomeComponent} from "./home/home.component";
+import {DetailViewComponent} from "./detail-view/detail-view.component";
 
 
-const routes: Routes = [];
+export const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'detail/:id/:result_1/:result_2',
+    component: DetailViewComponent
+  },
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes,{ useHash: true })],
+  exports: [RouterModule],
+  providers:[{provide: LocationStrategy, useClass: HashLocationStrategy}]
+
 })
 export class AppRoutingModule { }
