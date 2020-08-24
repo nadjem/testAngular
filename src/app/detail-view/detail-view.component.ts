@@ -32,15 +32,12 @@ export class DetailViewComponent implements OnInit {
     this.route.params.subscribe( params => {
       this.apiBiz.bizDetail(params.id).subscribe(res=>{
       this.detail = res;
-        console.log(this.detail)
       })
       this.apiBiz.detail(params.result_1).subscribe(res=>{
         this.result_1 = res;
-        console.log(this.result_1)
       })
       this.apiBiz.detail(params.result_2).subscribe(res=>{
         this.result_2 = res;
-        console.log(this.result_2)
       })
 
     });
