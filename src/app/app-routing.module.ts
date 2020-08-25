@@ -11,7 +11,7 @@ export const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'detail/:id/:result_1/:result_2',
+    path: 'detail/:id',
     component: DetailViewComponent
   },
 ];

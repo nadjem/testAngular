@@ -13,25 +13,23 @@
 </div>
 
   <div class="row">
-    <div class="col s12 m4">
+    <div class="col s12 m4" *ngFor="let res of results; let i = index">
       <div class="card-panel">
-        <span class="card-title_1">{{result_1.year}}</span>
+        <span class="card-title_1">{{res.year}}</span>
         <ul>
-          <li>ca : {{result_1.ca}} <mat-icon *ngIf="result_1.ca > result_2.ca">trending_up</mat-icon> <mat-icon *ngIf="result_1.ca < result_2.ca">trending_down</mat-icon></li>
-          <li>margin : {{result_1.margin}} <mat-icon *ngIf="result_1.margin > result_2.margin">trending_up</mat-icon> <mat-icon *ngIf="result_1.margin < result_2.margin">trending_down</mat-icon></li>
-          <li>ebitda : {{result_1.ebitda}} <mat-icon *ngIf="result_1.ebitda > result_2.ebitda">trending_up</mat-icon> <mat-icon *ngIf="result_1.ebitda < result_2.ebitda">trending_down</mat-icon></li>
-          <li>business : {{result_1.business}}</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col s12 m4">
-      <div class="card-panel">
-        <span class="card-title_1">{{result_2.year}}</span>
-        <ul>
-          <li>ca : {{result_2.ca}}</li>
-          <li>margin : {{result_2.margin}}</li>
-          <li>ebitda : {{result_2.ebitda}}</li>
-          <li>business : {{result_2.business}}</li>
+          <li>ca : {{res.ca}}
+            <mat-icon *ngIf="results[i+1] && results[i].ca > results[i+1].ca">trending_up</mat-icon>
+            <mat-icon *ngIf="results[i+1] && results[i].ca < results[i+1].ca">trending_down</mat-icon>
+          </li>
+          <li>margin : {{res.margin}}
+            <mat-icon *ngIf="results[i+1] && results[i].margin > results[i+1].margin">trending_up</mat-icon>
+            <mat-icon *ngIf="results[i+1] && results[i].margin < results[i+1].margin">trending_down</mat-icon>
+          </li>
+          <li>ebitda : {{res.ebitda}}
+            <mat-icon *ngIf="results[i+1] && results[i].ebitda > results[i+1].ebitda">trending_up</mat-icon>
+            <mat-icon *ngIf="results[i+1] && results[i].ebitda < results[i+1].ebitda">trending_down</mat-icon>
+          </li>
+          <li>business : {{res.business}}</li>
         </ul>
       </div>
     </div>

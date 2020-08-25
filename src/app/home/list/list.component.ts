@@ -41,7 +41,7 @@ export class ListComponent implements OnInit {
   }
   onClickTable(data){
       console.log(data)
-      this.route.navigateByUrl(`/detail/${data.id}/${data.results[0]}/${data.results[1]}`)
+      this.route.navigateByUrl(`/detail/${data.id}`)
   }
 
 }
